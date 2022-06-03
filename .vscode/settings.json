@@ -1,0 +1,7 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "html.format.templating": true,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    }
+}
