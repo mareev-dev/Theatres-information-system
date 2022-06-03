@@ -61,8 +61,9 @@ class Master(models.Model):
         ('MD', 'Мастер'),
         ('TP', 'Топ'),
     )
-    salon = models.OneToOneField(Salon, on_delete=models.CASCADE, verbose_name='Салон')
-    fits_name = models.CharField(verbose_name='Имя мастера', max_length=256)
-    last_name = models.CharField(verbose_name='Фамилия мастера', max_length=256)
+    ticket = models.OneToOneField(Salon, on_delete=models.CASCADE, verbose_name='билет')
+    fits_name = models.CharField(verbose_name='Имя мастера', max_length=256, null=False)
+    last_name = models.CharField(verbose_name='Фамилия мастера', max_length=256, null=False)
     rank = models.CharField(verbose_name='Ранг мастера', max_length=256, choices=RANK)
     image = models.ImageField(verbose_name='Картинка мастера', upload_to='salons/')
+
