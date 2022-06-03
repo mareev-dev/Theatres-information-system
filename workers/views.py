@@ -1,10 +1,10 @@
 
 from django.shortcuts import render
 from service.models import Service
-from salons.models import Salon, Social
+from workers.models import Salon, Social
 
 
-def salon_list(request):
+def salon_listes(request):
     salons = Salon.objects.all()
     ctx = {
         'salons' : salons,
@@ -25,6 +25,6 @@ def salon_detail(request, num_salon):
 def salon_filter(request, name):
     salon = Salon.objects.get(name=name)
     ctx = {
-        'salon' : salon
+        'salon' : salon,
     }
     return render(request, 'salons/filter.html', ctx)    
