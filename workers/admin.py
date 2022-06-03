@@ -5,5 +5,5 @@ from .models import (
     Social
 )
 
-admin.site.register(Salon)
+admin.site.register(Theaterses)
 admin.site.register(Social)
