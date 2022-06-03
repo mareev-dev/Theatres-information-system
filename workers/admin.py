@@ -6,4 +6,4 @@ from .models import (
 )
 
 admin.site.register(Salon)
-admin.site.register(Social)
+admin.site.register(Socialses)
