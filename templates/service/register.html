@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf_token" content="{{ csrf_token }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+</head>
+<body style="margin: 0;background-color: #101010;">
+{% block content %}
+
+    <link hrel="stylesheet" href="{% static 'css/register.css'%}" rel="stylesheet" type="text/css">
+    <header>
+        <p class="title">ProSerials</p>
+    </header>
+    <h1 style="left: calc(50% - 303px/2 + 0.5px);">Регистрация</h1>
+    <form method="post" style="height: 650px; margin-top:2%;">
+        {% csrf_token %}
+        <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        </script>
+      <p>Всего пару полей, и Вы - пользователь нашего сервиса!</p>
+      <input type="hidden" name="csrfmiddlewaretoken" value="sSsFTeehi50WczvZgkosOkmUzzdfGXdTc7xvEjkFZtAIMBFFrw8yQ2GSXilNxrjd">
+      <p>
+          <label for="id_username">НИКНЕЙМ:</label>
+          <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+      </p>
+      <p>
+          <label style="left: -150px;" for="id_password">ПАРОЛЬ:</label>
+          <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+      </p>
+        <p>
+        <label style="margin-left: 90px;" for="id_password">ПОВТОРИТЕ ПАРОЛЬ:</label>
+        <input type="password" name="password2" autocomplete="current-password" required="" id="id_password2">
+      </p>
+      <p>
+        <label style="left: -150px;" for="id_password">E-MAIL:</label>
+        <input type="email" name="email" autocomplete="current-password" required="" id="email">
+      </p>
+
+
+      <table>
+          <tbody><tr>
+              <td>&nbsp;</td>
+              <td><input style="left: 40px;" type="submit" value="РЕГИСТРАЦИЯ"></td>
+          </tr>
+          </tbody></table>
+  </form>
+
+
+{% endblock %}
+</body>
+</html>
